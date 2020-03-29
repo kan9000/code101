@@ -15,7 +15,15 @@ class Home extends CI_Controller {
     }
 
     public function get(){
-        echo "chaiyaporn";
+        // echo $this->input->post('username');
+        // echo $this->input->post('password');
+        // รับค่าจากฟอร์ม home_view.php
+        $data['username']=$this->input->post('username');
+        $data['password']=$this->input->post('password');
+        $data['head']['data']="OK";
+        $data['footer']['name']="No**************";
+        
+        $this->load->view('get_view',$data);
     }
 
 
